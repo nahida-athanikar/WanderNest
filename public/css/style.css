@@ -92,10 +92,25 @@ footer {
 /* Top Section: Grid Links */
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  
+  grid-template-columns: repeat(2, 1fr); /* default = mobile: 2 columns */
 }
+
+/* Medium screens (>=768px) */
+@media (min-width: 768px) {
+  .footer-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large screens (>=1024px) */
+@media (min-width: 1024px) {
+  .footer-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 .footer-links h5 {
   font-size: 14px;
