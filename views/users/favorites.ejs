@@ -1,0 +1,67 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+  <div class="container mt-4">
+    <h2 class="mb-4 text-center"><span class="emoji">❤️</span>My Wishlist<span class="emoji"> ❤️</span></h2>
+    <hr>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+      <% if (favorites.length === 0) { %>
+        <p class="text-center">You haven't added any wishlists yet.</p>
+      <% } else { %>
+        <% for (let listing of favorites) { %>
+          <div class="col mb-4">
+            <div class="card listing-card position-relative shadow-sm reveal">
+
+              <!-- Listing Image -->
+              <a href="/listings/<%= listing._id %>" class="listing-link">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem; object-fit: cover;">
+              </a>
+
+              <!-- ❤️ Favorite Button (remove option) -->
+              <form action="/users/favorites/<%= listing._id %>" method="POST" class="favorite-form">
+                <% if (currUser) { %>
+                  <button type="submit" class="favorite-btn">
+                    <!-- Always solid red in favorites -->
+                    <i class="fa-solid fa-heart text-danger"></i>
+                  </button>
+                <% } %>
+              </form>
+
+              <!-- Card Content -->
+              <div class="card-body">
+                <p class="card-text">
+                  <b><%= listing.title %></b> <br>
+                  &#8377 <%= listing.price.toLocaleString("en-IN") %> / night
+                  <i class="tax-info">&nbsp; +18% GST</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+</body>
+
+<script>
+  // ❤️ Favorite Toggle for removing directly from favorites page
+  document.querySelectorAll(".favorite-form").forEach(form => {
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const card = this.closest(".col"); // pura card hata dena
+      try {
+        const res = await fetch(this.action, {
+          method: this.method,
+          headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/json" },
+          body: JSON.stringify({})
+        });
+        const data = await res.json();
+        if (data.success) {
+          card.remove(); // remove card from DOM instantly
+        }
+      } catch (err) {
+        console.error("Error removing favorite:", err);
+      }
+    });
+  });
+</script>

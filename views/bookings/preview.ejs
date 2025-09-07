@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") -%>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="booking-card">
+        <h3 class="booking-title">Booking Preview</h3>
+
+        <!-- Listing Info -->
+        <div>
+          <h4><%= listing.title %></h4>
+          <p class="text-muted"><strong>Location:</strong> <%= listing.location %>, <%= listing.country %></p>
+          <p><strong>Price per night:</strong> ₹<%= listing.price.toLocaleString("en-IN") %></p>
+        </div>
+
+        <hr>
+
+        <!-- Booking Details -->
+        <div class="row">
+          <div class="col-sm-6 mb-2"><p><strong>User:</strong> <%= booking.user %></p></div>
+          <div class="col-sm-6 mb-2"><p><strong>Guests:</strong> <%= booking.guests %></p></div>
+          <div class="col-sm-6 mb-2"><p><strong>Check-in:</strong> <%= booking.checkIn %></p></div>
+          <div class="col-sm-6 mb-2"><p><strong>Check-out:</strong> <%= booking.checkOut %></p></div>
+        </div>
+
+        <!-- Price Calculation -->
+        <%
+          const checkInDate = new Date(booking.checkIn);
+          const checkOutDate = new Date(booking.checkOut);
+          const timeDiff = Math.abs(checkOutDate - checkInDate);
+          const nights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+          const totalCost = nights * listing.price;
+        %>
+
+        <div class="price-box">
+          <h5><strong>Price Details</strong></h5>
+          <p><strong>Nights:</strong> <%= nights %></p>
+          <p><strong>Price per night:</strong> ₹<%= listing.price.toLocaleString("en-IN") %></p>
+          <p class="fs-5"><strong>Total:</strong> ₹<%= totalCost.toLocaleString("en-IN") %></p>
+        </div>
+
+        <!-- Confirm Form -->
+        <form action="/listings/<%= listing._id %>/bookings/confirm" method="POST">
+          <input type="hidden" name="booking[checkIn]" value="<%= booking.checkIn %>">
+          <input type="hidden" name="booking[checkOut]" value="<%= booking.checkOut %>">
+          <input type="hidden" name="booking[guests]" value="<%= booking.guests %>">
+
+          <div class="d-flex justify-content-center gap-3 w-100">
+            <button type="submit" class="confirm-btn">Confirm Reservation</button>
+            <a href="/listings/<%= listing._id %>" class="back-btn">Back to Listing</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<% layout("/layouts/boilerplate") -%>
+
+<div class="row justify-content-center mt-5 mb-3">
+  <div class="col-md-6 col-lg-5">
+    <!-- Card for clean UI -->
+    <div class="card shadow-lg rounded-4 border-0">
+      <div class="card-body p-4">
+        <!-- Heading -->
+        <h2 class="text-center mb-4 fw-bold">
+          <span class="gradient-text">Sign Up on Wanderlust</span>
+        </h2>
+
+        <!-- Signup Form -->
+        <form method="POST" action="/signup" class="needs-validation" novalidate>
+          
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label fw-semibold">Username</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+              <input 
+                name="username" 
+                id="username" 
+                type="text" 
+                class="form-control" 
+                placeholder="Enter your username" 
+                required>
+              <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+              <input 
+                name="email" 
+                id="email" 
+                type="email" 
+                class="form-control" 
+                placeholder="Enter your email" 
+                required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label fw-semibold">Password</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+              <input 
+                name="password" 
+                id="password" 
+                type="password" 
+                class="form-control" 
+                placeholder="Enter your password" 
+                required>
+              <div class="invalid-feedback">Password is required.</div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn gradient-btn btn-lg rounded-3 shadow-sm">
+              <i class="bi bi-person-plus"></i> Sign Up
+            </button>
+          </div>
+
+          <!-- Small Text -->
+          <p class="text-center mt-3 mb-0">
+            Already have an account? 
+            <a href="/login" class="text-decoration-none gradient-text fw-semibold">Log in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Custom CSS -->
+<style>
+  /* Gradient text */
+
+  .gradient-text {
+  background: linear-gradient(90deg, #0072FF 0%, #A832FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; /* Important for emoji separation */
+}
+
+
+  /* Gradient button */
+  .gradient-btn {
+    background: linear-gradient(90deg, #0072FF 0%, #cf32ff 100%);
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .gradient-btn:hover {
+    opacity: 0.9;
+    color: rgb(0, 0, 0);
+  }
+</style>

@@ -1,0 +1,978 @@
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 55px; 
+}
+html, body {
+  overflow-x: hidden; /* Horizontal scroll hata dega */
+}
+
+
+.navbar {
+  height: 4rem;
+  background-color: white;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+.navbar-collapse {
+  text-align: center; /* Mobile pe sab center aligned */
+}
+
+.btn-search {
+   background: linear-gradient(90deg, #0072FF, #cf32ff);
+   color: white !important;
+   border-radius: 25px !important;
+   padding: 0 1rem 0 1rem !important;
+   white-space: nowrap; /* Text wrap na ho */
+}
+.btn-search:hover {
+  opacity: 0.9;
+}
+
+.btn-search i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.search-inp {
+  border-radius: 25px !important;
+  padding: 0.5rem 3rem o.5rem 3rem !important;
+  font-size: 0.9rem !important;
+  min-width: 200px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.689);  /* Transparent white */
+    backdrop-filter: blur(15px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(15px);   /* Safari support */
+    padding: 15px 0;
+   
+  }
+
+  /* Links ko thoda bold aur clear kar dete hai */
+  .navbar-collapse .nav-link {
+    color: #222 !important;
+    font-weight: 500;
+  }
+
+  
+}
+
+/* Footer Base */
+footer {
+  background-color: #f7f7f7;
+  border-top: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Top Section: Grid Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links h5 {
+  font-size: 14px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.footer-links a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Middle Section */
+.footer-extra {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 1.2rem;
+  font-size: 13px;
+  color: #666;
+}
+
+.f-info-socials i {
+  font-size: 18px;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 
+  transform 0.3s ease,   /* smooth scale */
+  color 0.3s ease;
+}
+
+.f-info-socials i:hover {
+  transform: scale(1.3);
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;  
+  transform-origin: center; /* scale center me ho */
+}
+.copy {
+  margin-top: 0.5rem;
+}
+
+
+
+/* Cards */
+.listing-card {
+  margin: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer;
+  border-radius: 2rem !important;
+  height: auto !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+   animation: slideUp 0.5s ease-out;
+}
+
+.listing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 1.0) !important;
+}
+.listing-card:hover .card-img-top {
+  transform: scale(1.02);
+  transition: transform 0.5s ease-in-out;
+}
+.card-img-top {
+  border-radius: 2rem 2rem 0 0 !important;
+  width: 100% !important;  
+  object-fit: cover !important;
+  transition: transform 0.3s ease;
+}
+
+.card-body {
+  padding: 0.8rem !important;
+
+}
+.card-text p{
+  font-weight: 400 !important;
+}
+.listing-link {
+  text-decoration: none;
+}
+
+/* Scroll animation ke liye base state */
+.reveal {
+  opacity: 0;
+  
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+/* Jab element visible ho jaye */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+  .row .col {
+    max-width: 100%;
+  }
+}
+
+
+
+.favorite-form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index:5;
+  pointer-events: none;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  
+  pointer-events: auto; /* only button clickable */
+
+}
+
+.favorite-btn i {
+  font-size: 18px;
+  pointer-events: none; 
+}
+
+/* By default (outline heart) */
+.favorite-btn .fa-regular.fa-heart {
+  color: #333; /* gray */
+}
+
+/* When solid heart */
+.favorite-btn .fa-solid.fa-heart {
+  color: #e74c3c !important; /* red */
+}
+
+/* Show Page */
+.show-img {
+  height: 40vh; 
+}
+.btns {
+  display: flex;
+} 
+
+
+/* MAP  */
+.mapbox {
+  margin-left: 9px;
+
+}
+
+#map {
+  width: 100% !important;         /* Always fit inside parent */
+  min-height: 300px;   /* mobile par bhi visible */
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  #map {
+    height: 400px;     /* Tablet/Desktop par zyada height */
+
+  }
+}
+
+
+/* Navbar smooth animation */
+.custom-navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+/* On scroll effect */
+.custom-navbar.scrolled {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Login Button Gradient */
+.login-btn {
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease;
+}
+.login-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Gradient Outline Button */
+.btn-outline-gradient {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #0072FF, #cf32ff) 1;
+  color: #0072FF;
+  transition: all 0.3s ease;
+}
+.btn-outline-gradient:hover {
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  color: white !important;
+}
+
+/* Hover Effect for Nav Links */
+.hover-link {
+  position: relative;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.hover-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  transition: width 0.3s ease;
+}
+.hover-link:hover::after {
+  width: 100%;
+}
+.hover-link:hover {
+  color: #0072FF;
+}
+
+/* Active Nav Link Style */
+.navbar .nav-link.active {
+  color: #0072FF !important;   /* Gradient me se Blue use kiya */
+  font-weight: 700;            /* Thoda bold */
+  letter-spacing: 0.5px;       /* Premium look */
+}
+
+@media (min-width: 768px) {  /* md and up */
+  .w-md-25 {
+    width: 25% !important;
+  }
+}
+
+@media (min-width: 992px) {  /* lg and up */
+  .w-lg-50 {
+    width: 50% !important;
+  }
+}
+
+
+/* create New List */
+.listing-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 10px; 
+  min-height: auto;  
+  flex: 1;
+  background: transparent; /* subtle page background */
+}
+
+.form-container {
+  background: #fff;
+  padding: 20px 18px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 500px;
+  animation: slideUp 0.5s ease-out;
+}
+
+.form-container h2{
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #0072FF, #ff32f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.form-control:focus {
+  border-color: #0072FF;
+  box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.2);
+  outline: none;
+}
+
+.add-btn {
+  width: 100%;    
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  border: none;
+  color: #fff !important;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  margin-top: 5px;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+  color: #222 !important;
+}
+
+.add-btn:active {
+  transform: scale(0.97) !important;
+}
+
+.add-btn:focus-visible {
+  outline: 3px solid rgba(0,114,255,0.4);
+  outline-offset: 2px;
+}
+
+/* Fade-in animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px 15px;
+  }
+
+  .form-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .add-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+
+
+/* Slidup Animation for Login page signup page container */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to card */
+.card {
+  animation: slideUp 0.5s ease-out;
+}
+
+.card-img-top1 {
+  
+  border-radius: 2rem !important;
+  width: 100% !important;  
+  object-fit: cover !important;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.card-img-top1:hover {
+  transform: scale(1.01);
+}
+
+.listing-title {
+ font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #0072FF, #ff32f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* General text */
+.card-body .card-text2 {
+  margin: 0.5rem 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  
+}
+
+/* Owner */
+.card-body .card-text2 i {
+  font-weight: 500;
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+/* Description */
+.card-body .card-text2:nth-of-type(2) {
+  font-size: 1rem;
+  color: #333;
+  font-style: italic;
+}
+
+/* Price */
+.card-body .card-text2:nth-of-type(3) {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 0.8rem;
+}
+
+/* Location */
+.card-body .card-text2:nth-of-type(4),
+.card-body .card-text2:nth-of-type(5) {
+  font-size: 0.92rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .listing-title {
+    font-size: 1.6rem;
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .listing-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Edit Button */
+.edit-btn {
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  color: #fff !important;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-left: 9px;
+
+}
+
+.edit-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #000;
+  color: #fff !important;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+.delete-btn:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* Review Section */
+.review-section {
+  margin: 9px;
+}
+.review-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #000;
+
+}
+
+/* Input Box */
+.review-input {
+  border-radius: 10px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.review-input:focus {
+  border-color: #0072FF;
+  box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.2);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  color: #fff !important;
+  padding: 10px 25px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+
+
+/* Review Cards */
+.review-card {
+  border: none;
+  /* border-bottom: 1px solid #ddd; */
+  padding: 5px;
+  background: transparent;  /* no extra box */
+}
+
+.review-card .card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #111;
+}
+
+.review-card .card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.delete-review-btn {
+  background: #000;
+  color: #fff !important;
+  padding: 6px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* Common Flash Styles */
+.flash-message {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  min-width: 280px;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideIn 0.5s ease, fadeOut 0.5s ease 4s forwards;
+  z-index: 9999;
+}
+
+/* Success Gradient */
+.flash-message.success {
+  background: linear-gradient(135deg, #28a745, #4cd964);
+}
+
+/* Error Gradient */
+.flash-message.error {
+  background: linear-gradient(135deg, #dc3545, #ff6b6b);
+}
+
+/* Close Button */
+.flash-message .btn-close {
+  background: none;
+  border: none;
+  filter: invert(1);
+  opacity: 0.8;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Fade Out Animation */
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+/* Edit Page  */
+.container h2{
+  font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #0072FF, #ff32f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Card look */
+.edit-card {
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+
+
+/* Inputs */
+.edit-input {
+  border-radius: 8px !important;
+  border: 1px solid #dcdcdc;
+  transition: all 0.2s ease-in-out;
+}
+
+.edit-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+/* Image */
+.edit-image {
+  max-height: 250px;
+  object-fit: cover;
+  border: 2px solid #eee;
+  margin-top: 5px;
+}
+
+/* Button */
+.edit-btn2 {
+  width: 100%;    
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  border: none;
+  color: #fff !important;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.edit-btn2:hover {
+  opacity: 0.9;
+  color: #222 !important;
+}
+
+/* TAX SWITCH  */
+
+.tax-toggle {
+ background: linear-gradient(90deg, #3086ee, #cf32ff);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  transition: all 0.3s ease;
+  color: white !important;
+}
+
+.tax-toggle:hover {
+  transform: translateY(-2px);
+  color: #222 !important; 
+}
+
+.tax-toggle label {
+  margin-bottom: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tax-info {
+  display: none;
+  font-size: 0.9rem;
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Switch Customization */
+.form-check-input {
+  width: 4rem;
+  height: 1.5rem;
+  background-color: #dee2e6;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-check-input:checked {
+  background-color: #19f63d !important;
+   border-color:  #19f63d !important;
+}
+
+
+
+
+/* Booking Preview Styles */
+.booking-card {
+  margin-top: -30px;
+}
+
+.booking-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.price-box {
+  padding: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.d-flex.gap-3 {
+  flex-wrap: nowrap; /* prevent line break */
+}
+ 
+.confirm-btn {
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  color: #fff !important;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+
+.confirm-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.back-btn {
+  border: 2px solid transparent;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+ 
+}
+
+.back-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+ 
+}
+
+.confirm-btn,
+.back-btn {
+  min-width: 160px; /* dono buttons ka approx equal width */
+  text-align: center;
+}
+
+.reserve-btn {
+  background: linear-gradient(90deg, #0072FF, #cf32ff);
+  color: #fff !important;
+  padding: 10px 25px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reserve-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+
+/* Booking Confirmation */
+
+/* Pulse animation for confirmation icon */
+.confirm-icon {
+  display: inline-block;
+  color: #28a745;
+  font-size: 4rem;
+  animation: pulse-check 1.5s ease-out forwards;
+}
+
+@keyframes pulse-check {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.emoji {
+  font-size: 2rem;
+  margin-right: 0.4rem;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+}
