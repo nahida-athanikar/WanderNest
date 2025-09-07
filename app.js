@@ -105,6 +105,11 @@ app.use("/listings/:id/bookings", bookingRoutes);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+// Add this explicit home route BEFORE the catch-all 404 handler
+app.get('/', (req, res) => {
+  res.render('listings/startDashboard');
+});
+
 app.all(/.*/, (req, res, next) => {
     next(new ExpressError(404, "Page Not Found"));
 });
