@@ -45,8 +45,7 @@
 ---
 
 ## 📸 Screenshots
-
-_(Add snapshots here to visually showcase your UI)_  
+ 
 ![WanderNest Listing page](public/images/listingPage.png) 
 ![Login/Signup Page](public/images/signup.png) 
 ![Hosting page](public/images/hosting.png) 
