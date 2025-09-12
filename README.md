@@ -1,4 +1,4 @@
-# 🌍 WanderNest – Discover & Book Stays Effortlessly
+# 🌍 WanderNest – Travel & Stay Booking Platform
 
 ![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
