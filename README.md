@@ -13,37 +13,99 @@
 🚀 **WanderNest** is a full-stack web application that lets users explore destinations, book accommodations, and share reviews — powered with AI-driven search, cloud media uploads, and interactive maps.
 
 ---
+## 🚀 Live Demo
 
-## ✨ Highlights
+🔗 Live Website: https://wandernest.onrender.com  
+🔗 GitHub Repository: https://github.com/nahida-athanikar/WanderNest
 
-✅ **Reserve Listings** – Book stays quickly and easily  
-✅ **AI/NLP-Powered Search** – Smarter search experience using Google Gemini + Natural.js  
-✅ **Authentication & Authorization** – Secure login with Passport.js  
-✅ **Reviews & Ratings** – Users can give feedback, edit or delete their own reviews  
-✅ **Cloud Media Uploads** – Fast image uploads via Cloudinary & Multer  
-✅ **Interactive Maps** – Explore locations with Mapbox SDK  
-✅ **Mobile Responsive** – Smooth UI across all devices  
-✅ **Host Your Property** – Allow users to list their own accommodations  
-✅ **Secure Sessions** – Reliable session handling with MongoDB and Express-session  
-✅ **Deployed on Render** – Live and accessible to all 🌍
+## 📌 Features
 
-💻 **Bonus** – Subtle UI animations for enhanced user experience!
+### 🏠 Property Listings
+- Create, edit, and delete property listings
+- Upload property images
+- View detailed listing pages
+
+### 🔐 Authentication & Authorization
+- User signup and login system
+- Secure session management
+- Protected routes for authorized users
+- Only listing owners can edit/delete their listings
+
+### ⭐ Reviews & Ratings
+- Users can leave reviews on properties
+- Delete reviews functionality
+- Displays user feedback for better decision making
+
+### 🖼 Image Upload
+- Upload listing images using **Multer**
+- Store images securely using **Cloudinary**
+
+### 🗺 Location Map
+- Integrated **Mapbox API** for displaying property locations
+- Helps users visualize where the property is located
+
+### 🤖 AI Search
+- AI-powered property search
+- Implemented using **Google Gemini API** and **Natural.js**
+
+### 📱 Responsive Design
+- Fully responsive UI
+- Works across mobile, tablet, and desktop devices
 
 ---
 
-## 🧰 Tech Stack
-- **Frontend**: Javascript, CSS, Bootstrap, Animation 
-- **Backend**: Node.js, Express.js  
-- **Database**: MongoDB, Mongoose  
-- **Templating**: EJS  
-- **AI/NLP**: Google Gemini, Natural.js  
-- **Media Handling**: Cloudinary, Multer  
-- **Maps**: Mapbox SDK  
-- **Authentication**: Passport.js  
-- **Hosting**: Render
+## 🛠 Tech Stack
+
+| Layer | Technology Used |
+|------|----------------|
+| **Frontend** | HTML, CSS, Bootstrap, JavaScript, EJS |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB with Mongoose |
+| **Authentication** | Passport.js, Express Session |
+| **Image Management** | Cloudinary, Multer |
+| **Maps & Location** | Mapbox API |
+| **AI Search** | Google Gemini API, Natural.js |
+| **Deployment** | Render |
+| **Version Control** | Git & GitHub |
 
 ---
+## 📂 Project Structure
 
+```
+WanderNest
+│
+├── models
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── routes
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── controllers
+│   ├── listings.js
+│   ├── reviews.js
+│   └── users.js
+│
+├── views
+│   ├── listings
+│   ├── reviews
+│   ├── layouts
+│   └── partials
+│
+├── public
+│   ├── css
+│   ├── js
+│   └── images
+│
+├── middleware
+├── utils
+│
+├── app.js
+└── package.json
+```
 ## 📸 Screenshots
  
 ![WanderNest Listing page](public/images/listingPage.png) 
@@ -54,21 +116,90 @@
 
 ---
 
-## 📄 About
+## 👤 User Workflow
 
-This project helped me enhance my skills in:
+The typical workflow of the WanderNest platform is as follows:
 
-✅ MERN stack development  
-✅ AI/NLP-powered features for better user experience  
-✅ Cloud media integration and session security  
-✅ Building real-world web apps with interactive maps and responsive design
+1. **User Registration**
+   - A new user creates an account using the signup form.
 
-It's live now and open for exploration!
+2. **User Login**
+   - Registered users log in securely using their credentials.
 
-👉 **Check it out here:** [https://wandernest-w9b9.onrender.com](https://wandernest-w9b9.onrender.com)
+3. **Browse Listings**
+   - Users can explore available properties on the homepage.
+
+4. **View Property Details**
+   - Users can open a listing to view detailed information including images, price, description, and location.
+
+5. **Add a Listing**
+   - Authenticated users can create a new property listing by providing property details and uploading images.
+
+6. **Edit / Delete Listing**
+   - Property owners can update or remove their listings.
+
+7. **Leave Reviews**
+   - Users can add reviews and ratings for properties they have visited.
+
+8. **View Location on Map**
+   - Users can view property locations using integrated map services.
+
+9. **Logout**
+   - Users can securely logout from the platform.
+--- 
+
+## 📦 Installation Guide
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/nahida-athanikar/WanderNest.git
+cd WanderNest
+```
+### 2️⃣Install Dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Add Environment Variables
+Create a .env file:
+```bash
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+# Mapbox Configuration
+MAPBOX_TOKEN=your_mapbox_access_token
+
+# Gemini AI Configuration
+GEMINI_API_KEY=your_gemini_api_key
+
+# Session Secret
+SESSION_SECRET=your_session_secret
+```
+
+```bash
+Replace the values with your specific configurations.
+
+```
+
+### 4️⃣ Start the Server
+```bash
+npm start
+```
+
+### 5️⃣ Open App in Browser
+Open http://localhost:8080/listings in your web browser.
+
 
 ---
 
-## 📬 Connect
+## 👤 Author
 
+**Nahida Athanikar**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/nahida-athanikar)
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:your-email@gmail.com)
 Feel free to reach out for feedback, collaborations, or opportunities!
