@@ -26,7 +26,13 @@ router.route("/login")
 
 
 // Logout 
-router.get("/logout", userController.logout);
+router.post("/logout", (req, res, next) => {
+  req.logout(function(err) {
+    if (err) return next(err);
+    req.flash("success", "Logged out successfully!");
+    res.redirect("/login"); // ya "/" bhi kar sakti ho
+  });
+});
 
 router.get("/account", isLoggedIn, userController.renderAccount);
 

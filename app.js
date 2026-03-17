@@ -17,12 +17,14 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const bookingRoutes = require("./routes/booking");
-
+const authRoutes = require("./routes/auth");
 
 //all Router required
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+
+
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -83,6 +85,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+require("./config/passportGoogle")(passport);
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -90,10 +93,12 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-  res.locals.currUser = req.user;
+  res.locals.currUser = req.user || null;
   res.locals.mapToken = process.env.MAP_TOKEN;
   next();
 })
+
+app.use("/auth", authRoutes);
 
 
 //all Router

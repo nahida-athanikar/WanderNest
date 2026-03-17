@@ -17,7 +17,12 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Listing" // yeh tumhare Listing model ka reference hoga
     }
-  ]
+  ],
+  googleId: {
+    type: String,
+    default: null,
+    unique: true
+  }
 })
 
 // Automatic create username, email, password
