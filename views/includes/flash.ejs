@@ -1,5 +1,5 @@
 <!-- Flash Success -->
-<% if(success && success.length) { %>
+<% if(typeof success !== 'undefined' && success.length > 0) { %>
   <div class="flash-message success">
     <%= success %>
     <button class="btn-close" onclick="this.parentElement.remove()"></button>
@@ -7,7 +7,7 @@
 <% } %>
 
 <!-- Flash Error -->
-<% if(error && error.length) { %>
+<% if(typeof error !== 'undefined' && error.length > 0) { %>
   <div class="flash-message error">
     <%= error %>
     <button class="btn-close" onclick="this.parentElement.remove()"></button>
