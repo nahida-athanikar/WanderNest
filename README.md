@@ -123,6 +123,10 @@ WanderNest
   </tr>
 
   <tr>
+    <td colspan="2" height="30"></td>
+  </tr>
+  
+  <tr>
     <td align="center"><b>Screenshot 3</b></td>
     <td align="center"><b>Screenshot 4</b></td>
   </tr>
@@ -136,6 +140,10 @@ WanderNest
   </tr>
 
   <tr>
+    <td colspan="2" height="30"></td>
+  </tr>
+
+  <tr>
     <td align="center"><b>Screenshot 5</b></td>
     <td align="center"><b>Screenshot 6</b></td>
   </tr>
@@ -146,6 +154,10 @@ WanderNest
   <tr>
     <td align="center"><i>➕ Listing Your Property</i></td>
     <td align="center"><i> Property Details</i></td>
+  </tr>
+
+  <tr>
+    <td colspan="2" height="30"></td>
   </tr>
 
   <tr>
@@ -163,9 +175,9 @@ WanderNest
 
   <!-- 🔥 SPACE ADD HERE -->
   <tr>
-    <td colspan="2" height="10"></td>
+    <td colspan="2" height="30"></td>
   </tr>
-  
+
   <tr>
     <td align="center"><b>Screenshot 9</b></td>
     <td align="center"><b>Screenshot 10</b></td>
