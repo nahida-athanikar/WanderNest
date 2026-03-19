@@ -108,13 +108,73 @@ WanderNest
 ```
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="public/images/listingPage.png" width="45%"/>
-  <img src="public/images/signup.png" width="45%"/><br/>
-  <img src="public/images/hosting.png" width="45%"/>
-  <img src="public/images/booking.png" width="45%"/><br/>
-  <img src="public/images/review.png" width="45%"/>
-</p>
+<table>
+  <tr>
+    <td align="center"><b>Screenshot 1</b></td>
+    <td align="center"><b>Screenshot 2</b></td>
+  </tr>
+  <tr>
+    <td><img src="public/images/listingPage.png" width="100%"/></td>
+    <td><img src="public/images/search listing.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><i>🏠 All Listings</i></td>
+    <td align="center"><i>🔍 Search Listings</i></td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Screenshot 3</b></td>
+    <td align="center"><b>Screenshot 4</b></td>
+  </tr>
+  <tr>
+    <td><img src="public/images/login.png" width="100%"/></td>
+    <td><img src="public/images/signup.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><i>🔐 Login Page</i></td>
+    <td align="center"><i>📝 Signup Page</i></td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Screenshot 5</b></td>
+    <td align="center"><b>Screenshot 6</b></td>
+  </tr>
+  <tr>
+    <td><img src="public/images/hosting.png" width="100%"/></td>
+    <td><img src="public/images/property-details.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><i>➕ Listing Your Property</i></td>
+    <td align="center"><i>📅 Property Details</i></td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Screenshot 7</b></td>
+    <td align="center"><b>Screenshot 8</b></td>
+  </tr>
+  <tr>
+    <td><img src="public/images/calender-ui.png" width="100%"/></td>
+    <td><img src="public/images/confirm.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><i>➕ Property Booking (Calendar UI)</i></td>
+    <td align="center"><i>📅 Confirm Booking</i></td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Screenshot 9</b></td>
+    <td align="center"><b>Screenshot 10</b></td>
+  </tr>
+
+  <tr>
+    <td><img src="public/images/all-reeview.png" width="100%"/></td>
+    <td><img src="public/images/map-feature.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><i>➕ All Reviews</i></td>
+    <td align="center"><i>📅 Map Feature</i></td>
+  </tr>
+</table>
 ---
 
 ## 👤 User Workflow
