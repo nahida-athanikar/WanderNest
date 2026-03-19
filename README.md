@@ -145,7 +145,7 @@ WanderNest
   </tr>
   <tr>
     <td align="center"><i>➕ Listing Your Property</i></td>
-    <td align="center"><i>📅 Property Details</i></td>
+    <td align="center"><i> Property Details</i></td>
   </tr>
 
   <tr>
@@ -156,12 +156,16 @@ WanderNest
     <td><img src="public/images/calender-ui.png" width="50%" width="40%"/></td>
     <td><img src="public/images/confirm.png" width="100%"/></td>
   </tr>
-  <br>
   <tr>
-    <td align="center"><i>➕ Property Booking (Calendar UI)</i></td>
-    <td align="center"><i>📅 Confirm Booking</i></td>
+    <td align="center"><i>📅 Property Booking (Calendar UI)</i></td>
+    <td align="center"><i>✅ Confirm Booking</i></td>
   </tr>
 
+  <!-- 🔥 SPACE ADD HERE -->
+  <tr>
+    <td colspan="2" height="10"></td>
+  </tr>
+  
   <tr>
     <td align="center"><b>Screenshot 9</b></td>
     <td align="center"><b>Screenshot 10</b></td>
@@ -172,8 +176,8 @@ WanderNest
     <td><img src="public/images/map-feature.png" width="100%"/></td>
   </tr>
   <tr>
-    <td align="center"><i>➕ All Reviews</i></td>
-    <td align="center"><i>📅 Map Feature</i></td>
+    <td align="center"><i>All Reviews</i></td>
+    <td align="center"><i>Map Feature</i></td>
   </tr>
 </table>
 ---
