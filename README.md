@@ -69,43 +69,7 @@
 | **Version Control** | Git & GitHub |
 
 ---
-## 📂 Project Structure
 
-```
-WanderNest
-│
-├── models
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-│
-├── routes
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-│
-├── controllers
-│   ├── listings.js
-│   ├── reviews.js
-│   └── users.js
-│
-├── views
-│   ├── listings
-│   ├── reviews
-│   ├── layouts
-│   └── partials
-│
-├── public
-│   ├── css
-│   ├── js
-│   └── images
-│
-├── middleware
-├── utils
-│
-├── app.js
-└── package.json
-```
 ## 📸 Screenshots
 
 <table>
@@ -193,6 +157,44 @@ WanderNest
   </tr>
 </table>
 ---
+
+## 📂 Project Structure
+
+```
+WanderNest
+│
+├── models
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── routes
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── controllers
+│   ├── listings.js
+│   ├── reviews.js
+│   └── users.js
+│
+├── views
+│   ├── listings
+│   ├── reviews
+│   ├── layouts
+│   └── partials
+│
+├── public
+│   ├── css
+│   ├── js
+│   └── images
+│
+├── middleware
+├── utils
+│
+├── app.js
+└── package.json
+```
 
 ## 👤 User Workflow
 
