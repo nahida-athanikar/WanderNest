@@ -107,13 +107,14 @@ WanderNest
 └── package.json
 ```
 ## 📸 Screenshots
- 
-![WanderNest Listing page](public/images/listingPage.png) 
-![Login/Signup Page](public/images/signup.png) 
-![Hosting page](public/images/hosting.png) 
-![Booking Page](public/images/booking.png)  
-![Review Section](public/images/review.png)
 
+<p align="center">
+  <img src="public/images/listingPage.png" width="45%"/>
+  <img src="public/images/signup.png" width="45%"/><br/>
+  <img src="public/images/hosting.png" width="45%"/>
+  <img src="public/images/booking.png" width="45%"/><br/>
+  <img src="public/images/review.png" width="45%"/>
+</p>
 ---
 
 ## 👤 User Workflow
