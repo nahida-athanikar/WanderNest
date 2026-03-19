@@ -153,9 +153,10 @@ WanderNest
     <td align="center"><b>Screenshot 8</b></td>
   </tr>
   <tr>
-    <td><img src="public/images/calender-ui.png" width="100%"/></td>
+    <td><img src="public/images/calender-ui.png" width="50%" width="40%"/></td>
     <td><img src="public/images/confirm.png" width="100%"/></td>
   </tr>
+  <br>
   <tr>
     <td align="center"><i>➕ Property Booking (Calendar UI)</i></td>
     <td align="center"><i>📅 Confirm Booking</i></td>
