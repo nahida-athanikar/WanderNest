@@ -165,7 +165,7 @@ WanderNest
     <td align="center"><b>Screenshot 8</b></td>
   </tr>
   <tr>
-    <td><img src="public/images/calender-ui.png" width="30%" height="30%"/></td>
+    <td><img src="public/images/calender-ui.png" width="100%" height="30%"/></td>
     <td><img src="public/images/confirm.png" width="100%"/></td>
   </tr>
   <tr>
