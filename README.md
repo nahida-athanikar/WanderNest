@@ -125,7 +125,7 @@ WanderNest
   <tr>
     <td colspan="2" height="30"></td>
   </tr>
-  
+
   <tr>
     <td align="center"><b>Screenshot 3</b></td>
     <td align="center"><b>Screenshot 4</b></td>
@@ -165,7 +165,7 @@ WanderNest
     <td align="center"><b>Screenshot 8</b></td>
   </tr>
   <tr>
-    <td><img src="public/images/calender-ui.png" width="50%" width="40%"/></td>
+    <td><img src="public/images/calender-ui.png" width="50%" width="30%" align="center"/></td>
     <td><img src="public/images/confirm.png" width="100%"/></td>
   </tr>
   <tr>
